@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     final String FORWARD = "f";
     final String BACKWARD = "b";
-    final String LEFT = "1";
+    final String LEFT = "l";
     final String RIGHT = "r";
     final String STOP = "s";
     final String LEFTBACK = "L";
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
             @Override
             public void onDeviceConnected(String name, String address) {
                 connect.setEnabled(true);
-                connect.setText("Connected to" + name);
+                connect.setText("Connected to " + name);
             }
 
             @Override
@@ -147,14 +147,16 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 else if (event.getAction() == MotionEvent.ACTION_UP) left = false;
                 break;
             case R.id.right:
-                if(event.getAction()==MotionEvent.ACTION_DOWN) right = true;
-                else if (event.getAction()== MotionEvent.ACTION_UP)right = false;
+                if (event.getAction() == MotionEvent.ACTION_DOWN) right = true;
+                else if (event.getAction() == MotionEvent.ACTION_UP) right = false;
                 break;
             case R.id.stop:
-                if(event.getAction()== MotionEvent.ACTION_DOWN)stop = true;
-                else if(event.getAction()==MotionEvent.ACTION_UP)stop = false;
+                if (event.getAction() == MotionEvent.ACTION_DOWN) stop = true;
+                else if (event.getAction() == MotionEvent.ACTION_UP) stop = false;
+                break;
         }
-        if(event.getAction()== MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_UP)
+
+        if (event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_UP)
             command();
 
         return false;
