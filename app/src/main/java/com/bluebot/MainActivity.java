@@ -17,18 +17,16 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     final String FORWARD = "f";
     final String BACKWARD = "b";
-    final String LEFT = "l";
-    final String RIGHT = "r";
+    final String LEFT = "r";
+    final String RIGHT = "l";
     final String STOP = "s";
-    final String LEFTBACK = "L";
-    final String RIGHTBACK = "R";
-    final String AUTOPILOT = "a";
+    final String LEFTBACK = "R";
+    final String RIGHTBACK = "L";
 
     boolean forward = false;
     boolean backward = false;
     boolean left = false;
     boolean right = false;
-    boolean auto = false;
     boolean stop = false;
 
     BluetoothSPP bluetooth;
@@ -89,20 +87,14 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         }
     }
 
-    /**
-     * Set buttons on touch listener
-     */
     private void setButtonsOnTouchListener() {
         findViewById(R.id.forward).setOnTouchListener(this);
         findViewById(R.id.backward).setOnTouchListener(this);
         findViewById(R.id.left).setOnTouchListener(this);
         findViewById(R.id.right).setOnTouchListener(this);
-        findViewById(R.id.auto).setOnTouchListener(this);
+        findViewById(R.id.stop).setOnTouchListener(this);
     }
 
-    /**
-     * Set connection to phone listener
-     */
     private void setConnectListener() {
         connect.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,9 +109,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         });
     }
 
-    /**
-     * Set Bluetooth Listener
-     */
     private void setBluetoothListener() {
         bluetooth.setBluetoothConnectionListener(new BluetoothSPP.BluetoothConnectionListener() {
             @Override
@@ -161,9 +150,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 if (event.getAction() == MotionEvent.ACTION_DOWN) right = true;
                 else if (event.getAction() == MotionEvent.ACTION_UP) right = false;
                 break;
-            case R.id.auto:
-                if (event.getAction() == MotionEvent.ACTION_DOWN) auto = true;
-                else if (event.getAction() == MotionEvent.ACTION_UP) auto = false;
+            case R.id.stop:
+                if (event.getAction() == MotionEvent.ACTION_DOWN) stop = true;
+                else if (event.getAction() == MotionEvent.ACTION_UP) stop = false;
                 break;
         }
 
@@ -174,6 +163,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     }
 
     private void command() {
+
         if (stop) {
             send(STOP);
         } else if (forward) {
@@ -188,7 +178,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
             else send(STOP);
         } else if (left && !right) send(LEFT);
         else if (right) send(RIGHT);
-        else if(auto)send(AUTOPILOT);
         else send(STOP);
 
     }
