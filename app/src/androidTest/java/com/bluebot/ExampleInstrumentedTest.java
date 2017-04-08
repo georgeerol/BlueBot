@@ -1,4 +1,4 @@
-package com.car.rc.example.fouliex.rccar;
+package com.bluebot;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.car.rc.example.fouliex.rccar", appContext.getPackageName());
+        assertEquals("com.bluebot", appContext.getPackageName());
     }
 }
