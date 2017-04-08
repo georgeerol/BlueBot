@@ -1,4 +1,4 @@
-package com.car.rc.example.fouliex.rccar;
+package com.bluebot;
 
 import android.app.Activity;
 import android.content.Intent;

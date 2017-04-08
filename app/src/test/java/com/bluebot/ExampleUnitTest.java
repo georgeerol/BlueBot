@@ -1,4 +1,4 @@
-package com.car.rc.example.fouliex.rccar;
+package com.bluebot;
 
 import org.junit.Test;
 
