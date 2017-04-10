@@ -2,8 +2,8 @@ package com.bluebot;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -13,15 +13,15 @@ import app.akexorcist.bluetotohspp.library.BluetoothSPP;
 import app.akexorcist.bluetotohspp.library.BluetoothState;
 import app.akexorcist.bluetotohspp.library.DeviceList;
 
-public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.BACKWARD;
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.FORWARD;
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.LEFT;
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.LEFTBACK;
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.RIGHT;
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.RIGHTBACK;
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.STOP;
 
-    final String FORWARD = "f";
-    final String BACKWARD = "b";
-    final String LEFT = "r";
-    final String RIGHT = "l";
-    final String STOP = "s";
-    final String LEFTBACK = "R";
-    final String RIGHTBACK = "L";
+public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
 
     boolean forward = false;
     boolean backward = false;
