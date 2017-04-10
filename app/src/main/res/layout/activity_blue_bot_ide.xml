@@ -32,4 +32,13 @@
         android:text="Run"
         tools:layout_editor_absoluteX="207dp"
         tools:layout_editor_absoluteY="121dp" />
+
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Error message"
+        android:text="Error!"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="182dp" />
 </android.support.constraint.ConstraintLayout>
