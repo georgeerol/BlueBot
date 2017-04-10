@@ -11,11 +11,15 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -62,6 +66,22 @@ public class BlueBotIDESpec implements RequestProcessor {
         assertNotNull(responseHandlerPassedToBind);
     }
 
+    @Test
+    public void boundResponseHandlerShouldChangeTheUI() throws Exception {
+        //Given
+        theIDEActivityShouldBindTheRequestProcessorWhenSet();
+        //When we have an error response
+        Map<String,String> response = new HashMap<String,String>(){{ put(UIResponseType.ERROR,"Stupidity Error!"); }};
+        //And we send it to the responseHandler...
+        responseHandlerPassedToBind.responseForRequest(UIRequestTypes.EXECUTE_CODE, response);
+        //Then the UI should light up with the error
+        onView(withContentDescription("Error message")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void theIDEActivityShouldNotShowErrorMessagesByDefault() throws Exception {
+        onView(withContentDescription("Error message")).check(matches(not(isDisplayed())));
+    }
 
     @Override
     public void processRequest(String requestType, Object data) {
