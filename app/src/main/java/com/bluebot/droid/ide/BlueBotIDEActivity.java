@@ -8,12 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.bluebot.R;
-import com.bluebot.droid.ide.runtime.CodeExecutor;
+import com.bluebot.droid.ide.runtime.RequestProcessor;
 
 
 public class BlueBotIDEActivity extends AppCompatActivity {
 
-    private CodeExecutor codeExecutor;
+    private RequestProcessor requestProcessor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +23,12 @@ public class BlueBotIDEActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final Editable code = ((EditText) findViewById(R.id.codeEntry)).getText();
-                codeExecutor.executeCode(code.toString());
+                requestProcessor.processRequest(UIRequestTypes.EXECUTE_CODE, code.toString());
             }
         });
     }
 
-    public void setCodeExecutor(CodeExecutor codeExecutor) {
-        this.codeExecutor = codeExecutor;
+    public void setRequestProcessor(RequestProcessor requestProcessor) {
+        this.requestProcessor = requestProcessor;
     }
 }
