@@ -17,6 +17,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by Clifton Craig on 4/8/17.
@@ -29,6 +30,7 @@ public class BlueBotIDESpec implements RequestProcessor {
     public ActivityTestRule<BlueBotIDEActivity> activityTestRule = new ActivityTestRule(BlueBotIDEActivity.class);
     private String dataPassedToRequestProcessor;
     private String requestTypePassedToRequestProcessor;
+    private ResponseHandler responseHandlerPassedToBind;
 
     @Test
     public void shouldIncludeWindowTitleOnScreen() {
@@ -44,12 +46,22 @@ public class BlueBotIDESpec implements RequestProcessor {
     public void shouldHaveAButtonToRunCode() throws Exception {
         onView(withContentDescription("Run")).check(matches(isDisplayed()));
     }
-
     @Test
     public void theIDEShouldDependOnARequestProcessor() throws Exception {
-        RequestProcessor requestProcessor = null;
-        activityTestRule.getActivity().setRequestProcessor(requestProcessor);
+        activityTestRule.getActivity().setRequestProcessor(this);
     }
+
+    @Override
+    public void bind(ResponseHandler responseHandler){
+        this.responseHandlerPassedToBind = responseHandler;
+    }
+
+    @Test
+    public void theIDEActivityShouldBindTheRequestProcessorWhenSet() throws Exception {
+        activityTestRule.getActivity().setRequestProcessor(this);
+        assertNotNull(responseHandlerPassedToBind);
+    }
+
 
     @Override
     public void processRequest(String requestType, Object data) {

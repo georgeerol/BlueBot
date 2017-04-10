@@ -30,5 +30,6 @@ public class BlueBotIDEActivity extends AppCompatActivity {
 
     public void setRequestProcessor(RequestProcessor requestProcessor) {
         this.requestProcessor = requestProcessor;
+        requestProcessor.bind(new ResponseHandler() { });
     }
 }
