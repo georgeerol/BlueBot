@@ -5,6 +5,6 @@ package com.bluebot.droid.ide.runtime;
  * Copyright GE 4/9/17
  */
 
-public interface CodeExecutor {
-    void executeCode(String code);
+public interface RequestProcessor {
+    void processRequest(String requestType, Object data);
 }
