@@ -13,4 +13,23 @@
         android:text="BlueBot IDE"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="16dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Code Entry"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Run"
+        android:text="Run"
+        tools:layout_editor_absoluteX="207dp"
+        tools:layout_editor_absoluteY="121dp" />
 </android.support.constraint.ConstraintLayout>
