@@ -67,7 +67,7 @@ public class BlueBotIDESpec implements RequestProcessor {
     }
 
     @Test
-    public void boundResponseHandlerShouldChangeTheUI() throws Exception {
+    public void boundResponseHandlerShouldShowErrorMEssageInTheUI() throws Exception {
         //Given
         theIDEActivityShouldBindTheRequestProcessorWhenSet();
         //When we have an error response
@@ -76,6 +76,18 @@ public class BlueBotIDESpec implements RequestProcessor {
         responseHandlerPassedToBind.responseForRequest(UIRequestTypes.EXECUTE_CODE, response);
         //Then the UI should light up with the error
         onView(withContentDescription("Error message")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void boundResponseHandlerShouldNotShowErrorOnSuccess() throws Exception {
+        //Given
+        theIDEActivityShouldBindTheRequestProcessorWhenSet();
+        //When we have an error response
+        Map<String,String> response = new HashMap<String,String>(){{ put(UIResponseType.SUCCESS,""); }};
+        //And we send it to the responseHandler...
+        responseHandlerPassedToBind.responseForRequest(UIRequestTypes.EXECUTE_CODE, response);
+        //Then the UI should **NOT** light up with the error
+        onView(withContentDescription("Error message")).check(matches( not (isDisplayed())));
     }
 
     @Test

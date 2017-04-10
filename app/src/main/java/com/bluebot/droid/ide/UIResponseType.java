@@ -7,4 +7,5 @@ package com.bluebot.droid.ide;
 
 class UIResponseType {
     public static final String ERROR = "ERROR";
+    public static final String SUCCESS = "SUCCESS";
 }
