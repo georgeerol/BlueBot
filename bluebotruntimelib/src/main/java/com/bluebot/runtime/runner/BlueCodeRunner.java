@@ -19,8 +19,10 @@ public class BlueCodeRunner {
     public void run(String blueCode) {
         final String[] sourceLines = blueCode.split("\n");
         Map<Integer, String> sourceCode = parseSourceCode(sourceLines);
-        for(String command : sourceCode.values())
+        for(String command : sourceCode.values()) {
             bluetoothCommandSink.send(xLate(command));
+        }
+        bluetoothCommandSink.send(BluetoothCodes.STOP);
     }
 
     private Map<Integer, String> parseSourceCode(String[] sourceLines) {
