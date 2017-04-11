@@ -5,6 +5,8 @@ import com.bluebot.runtime.bluetooth.BluetoothCommandSink;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class BlueCodeRunner {
     private static final List<String> VALID_COMMANDS = Arrays.asList("move");
@@ -16,24 +18,29 @@ public class BlueCodeRunner {
 
     public void run(String blueCode) {
         final String[] sourceLines = blueCode.split("\n");
-        for (String eachLine : sourceLines) {
-            final String command = parseCommand(eachLine);
+        Map<Integer, String> sourceCode = parseSourceCode(sourceLines);
+        for(String command : sourceCode.values())
             bluetoothCommandSink.send(xLate(command));
-        }
     }
 
-    private String parseCommand(String blueCode) {
-        final String[] tokens = blueCode.split(" ");
-        try { Integer.parseInt(tokens[0]); }
-        catch (NumberFormatException e) {
-            throw new IllegalArgumentException("BlueCode should start with a line number.",e);
+    private Map<Integer, String> parseSourceCode(String[] sourceLines) {
+        Map<Integer,String> sortedSource= new TreeMap<>();
+        for (String eachLine : sourceLines) {
+            final String[] tokens = eachLine.split(" ");
+            final int lineNumber;
+            try { lineNumber = Integer.parseInt(tokens[0]); }
+            catch (NumberFormatException e) {
+                throw new IllegalArgumentException("BlueCode should start with a line number.",e);
+            }
+            if(!isValidCommand(tokens[1]))
+                throw new IllegalArgumentException("A valid command should follow the line number.");
+            final String command1 = tokens[2];
+            if(tokens.length > 3)
+                throw new IllegalArgumentException("Line " + tokens[0] + ": Unexpected command or text [" + tokens[3] + "] after [" + command1 + "]");
+            final String command = command1;
+            sortedSource.put(lineNumber, command);
         }
-        if(!isValidCommand(tokens[1]))
-            throw new IllegalArgumentException("A valid command should follow the line number.");
-        final String command = tokens[2];
-        if(tokens.length > 3)
-            throw new IllegalArgumentException("Line " + tokens[0] + ": Unexpected command or text [" + tokens[3] + "] after [" + command + "]");
-        return command;
+        return sortedSource;
     }
 
     private boolean isValidCommand(String command) {
