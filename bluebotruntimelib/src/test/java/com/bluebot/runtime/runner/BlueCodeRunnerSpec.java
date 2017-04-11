@@ -14,6 +14,7 @@ import static com.bluebot.runtime.bluetooth.BluetoothCodes.BACKWARD;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.FORWARD;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.LEFT;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.RIGHT;
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.STOP;
 import static java.util.Arrays.asList;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertTrue;
@@ -42,6 +43,21 @@ public class BlueCodeRunnerSpec {
     }
 
     @Test
+    public void lastCommandShouldAlwaysBeStop() throws Exception {
+        //When we pass a single line BlueCode source to the runner...
+        blueCodeRunner.run("10 move forward");
+        //Then the last command should be STOP
+        Assert.assertThat(actualCommands, is(asList(FORWARD, STOP)));
+
+        actualCommands.clear();
+
+        //When we pass a multi-line BlueCode source to the runner...
+        blueCodeRunner.run("10 move forward\n20 move left");
+        //Then the last command should be STOP
+        Assert.assertThat(actualCommands, is(asList(FORWARD, LEFT, STOP)));
+    }
+
+    @Test
     public void blueCodeShouldStartWithALineNumber() throws Exception {
         assertValidCodeVsInvalidCode("move forward", "10 move forward", "BlueCode should start with a line number.");
     }
@@ -67,7 +83,7 @@ public class BlueCodeRunnerSpec {
         //When we pass it to the runner...
         blueCodeRunner.run(validBlueCode);
         //Then it should send valid commands to the BlueBot
-        Assert.assertThat(actualCommands, is(asList(FORWARD, RIGHT, FORWARD, RIGHT)));
+        Assert.assertThat(actualCommands, is(asList(FORWARD, RIGHT, FORWARD, RIGHT, STOP)));
     }
 
     @Test
@@ -80,7 +96,7 @@ public class BlueCodeRunnerSpec {
         //When we pass it to the runner...
         blueCodeRunner.run(validBlueCode);
         //Then it should send valid commands to the BlueBot
-        Assert.assertThat(actualCommands, is(asList(RIGHT, BACKWARD, LEFT, FORWARD)));
+        Assert.assertThat(actualCommands, is(asList(RIGHT, BACKWARD, LEFT, FORWARD, STOP)));
     }
 
     @Test
@@ -89,12 +105,16 @@ public class BlueCodeRunnerSpec {
         final List<String> matchingBluetoothCodes = asList(LEFT, RIGHT, FORWARD, BACKWARD);
 
         final List<String> expectedCodes = new ArrayList<>();
+        StringBuilder program = new StringBuilder();
         for (int i=0; i < possibleSubCommands.size()*5; i++) {
             final int nextCommand = random.nextInt(4);
             final String lineNumber = (i * 10) + " ";
             expectedCodes.add(matchingBluetoothCodes.get(nextCommand));
-            blueCodeRunner.run(lineNumber + "move " + possibleSubCommands.get(nextCommand));
+            program.append(lineNumber).append("move ")
+                    .append(possibleSubCommands.get(nextCommand)).append('\n');
         }
+        blueCodeRunner.run(program.toString());
+        expectedCodes.add(STOP);
         Assert.assertThat(actualCommands, is(expectedCodes));
     }
 
