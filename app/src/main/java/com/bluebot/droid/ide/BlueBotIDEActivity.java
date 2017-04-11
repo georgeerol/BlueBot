@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.bluebot.R;
-import com.bluebot.droid.ide.runtime.RequestProcessor;
+import com.bluebot.ui.RequestProcessor;
+import com.bluebot.ui.ResponseHandler;
 
 import java.util.Map;
 

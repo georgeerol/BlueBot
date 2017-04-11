@@ -1,6 +1,4 @@
-package com.bluebot.droid.ide.runtime;
-
-import com.bluebot.droid.ide.ResponseHandler;
+package com.bluebot.ui;
 
 /**
  * Created by Clifton Craig on 4/9/17.

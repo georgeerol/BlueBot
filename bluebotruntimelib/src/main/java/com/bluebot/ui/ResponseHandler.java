@@ -1,4 +1,4 @@
-package com.bluebot.droid.ide;
+package com.bluebot.ui;
 
 import java.util.Map;
 

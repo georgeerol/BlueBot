@@ -5,7 +5,8 @@ import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.bluebot.droid.ide.runtime.RequestProcessor;
+import com.bluebot.ui.RequestProcessor;
+import com.bluebot.ui.ResponseHandler;
 
 import org.junit.Rule;
 import org.junit.Test;
