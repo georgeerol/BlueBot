@@ -71,6 +71,19 @@ public class BlueCodeRunnerSpec {
     }
 
     @Test
+    public void instructionsShouldExecuteInLineNumberOrder() throws Exception {
+        //Given some valid, unordered BlueCode...
+        final String validBlueCode = "30 move left\n" +
+                "20 move backward\n" +
+                "40 move forward\n" +
+                "10 move right";
+        //When we pass it to the runner...
+        blueCodeRunner.run(validBlueCode);
+        //Then it should send valid commands to the BlueBot
+        Assert.assertThat(actualCommands, is(asList(RIGHT, BACKWARD, LEFT, FORWARD)));
+    }
+
+    @Test
     public void randomBlueCodeSendsCorrectBluetoothCodes() throws Exception {
         final List<String> possibleSubCommands = asList("left", "right", "forward", "backward");
         final List<String> matchingBluetoothCodes = asList(LEFT, RIGHT, FORWARD, BACKWARD);
