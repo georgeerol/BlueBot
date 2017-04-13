@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == BluetoothState.REQUEST_CONNECT_DEVICE) {
             if (resultCode == Activity.RESULT_OK && data != null) {
-                connect.setText("Connecting...");
+                connect.setText(R.string.connecting);
                 connect.setEnabled(false);
                 bluetooth.connect(data);
             }
@@ -123,19 +123,19 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
             @Override
             public void onDeviceConnected(String name, String address) {
                 connect.setEnabled(true);
-                connect.setText("Connected to " + name);
+                connect.setText(getString(R.string.connected_to, name));
             }
 
             @Override
             public void onDeviceDisconnected() {
                 connect.setEnabled(true);
-                connect.setText("Connection lost");
+                connect.setText(R.string.connection_lost);
             }
 
             @Override
             public void onDeviceConnectionFailed() {
                 connect.setEnabled(true);
-                connect.setText("Unable to connect");
+                connect.setText(R.string.unable_to_connect);
             }
         });
     }

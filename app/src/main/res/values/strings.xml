@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">BlueBot</string>
+    <string name="ide_title">BlueBot IDE</string>
+    <string name="content_desc_code_entry">Code Entry</string>
+    <string name="content_desc_run_button">Run</string>
+    <string name="run">Run</string>
+    <string name="content_desc_error_message">Error message</string>
+    <string name="error">Error!</string>
+    <string name="connect">Connect</string>
+    <string name="stop">Stop</string>
+    <string name="right">Right</string>
+    <string name="left">Left</string>
+    <string name="forward">Forward</string>
+    <string name="backward">backward</string>
+    <string name="ide">IDE</string>
+    <string name="connecting">Connecting...</string>
+    <string name="connected_to">Connected to %1$s</string>
+    <string name="connection_lost">Connection lost</string>
+    <string name="unable_to_connect">Unable to connect</string>
 </resources>

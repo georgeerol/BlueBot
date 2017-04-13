@@ -12,59 +12,59 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="Connect"
+        android:text="@string/connect"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="0dp" />
 
 
     <Button
-        android:id="@+id/auto"
+        android:id="@+id/stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Auto Pilot" />
+        android:text="@string/stop" />
 
     <Button
         android:id="@+id/right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/auto"
-        android:layout_alignBottom="@+id/auto"
+        android:layout_alignBaseline="@+id/stop"
+        android:layout_alignBottom="@+id/stop"
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
         android:layout_toEndOf="@+id/backward"
         android:layout_toRightOf="@+id/backward"
-        android:text="Right" />
+        android:text="@string/right" />
 
     <Button
-        android:text="Left"
+        android:text="@string/left"
         android:id="@+id/left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_alignBaseline="@+id/auto"
-        android:layout_alignBottom="@+id/auto"
+        android:layout_alignBaseline="@+id/stop"
+        android:layout_alignBottom="@+id/stop"
         android:layout_toLeftOf="@+id/backward"
         android:layout_toStartOf="@+id/backward"
         />
 
     <Button
-        android:text="Forward"
+        android:text="@string/forward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/forward"
         android:layout_marginBottom="24dp"
-        android:layout_above="@+id/auto"
+        android:layout_above="@+id/stop"
         android:layout_centerHorizontal="true" />
     <Button
         android:id="@+id/backward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/auto"
+        android:layout_below="@+id/stop"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:text="backward" />
+        android:text="@string/backward" />
 
     <Button
         android:id="@+id/ideButton"
@@ -73,5 +73,5 @@
         android:layout_alignLeft="@+id/stop"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/stop"
-        android:text="IDE" />
+        android:text="@string/ide" />
 </RelativeLayout>
