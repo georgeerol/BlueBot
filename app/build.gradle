@@ -19,17 +19,21 @@ android {
     }
 }
 
+ext {
+    supportVersion = '25.3.1'
+    espressoVersion = '2.2.2'
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:25.2.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.akexorcist:bluetoothspp:1.0.0'
-    compile 'com.android.support:support-v4:25.2.0'
+    compile "com.android.support:appcompat-v7:$supportVersion"
+    compile "com.android.support.constraint:constraint-layout:1.0.2"
+    compile "com.akexorcist:bluetoothspp:1.0.0"
+    compile "com.android.support:support-v4:$supportVersion"
     compile project(':bluebotruntimelib')
     testCompile 'junit:junit:4.12'
-    androidTestCompile 'com.android.support:support-v4:25.2.0'
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestCompile "com.android.support:support-v4:$supportVersion"
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$espressoVersion", {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
+    androidTestCompile "com.android.support.test.espresso:espresso-intents:$espressoVersion"
 }
