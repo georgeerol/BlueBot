@@ -1,10 +1,10 @@
-package com.bluebot.droid.ide;
+package com.bluebot.ui;
 
 /**
  * Created by Clifton Craig on 4/9/17.
  * Copyright GE 4/9/17
  */
 
-class UIRequestTypes {
+public class UIRequestTypes {
     public static final String EXECUTE_CODE = "EXECUTE_CODE";
 }

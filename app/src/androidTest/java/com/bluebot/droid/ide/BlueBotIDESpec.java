@@ -7,6 +7,8 @@ import android.support.test.runner.AndroidJUnit4;
 
 import com.bluebot.ui.RequestProcessor;
 import com.bluebot.ui.ResponseHandler;
+import com.bluebot.ui.UIRequestTypes;
+import com.bluebot.ui.UIResponseType;
 
 import org.junit.Rule;
 import org.junit.Test;
