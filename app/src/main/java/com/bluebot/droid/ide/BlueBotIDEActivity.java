@@ -9,6 +9,8 @@ import android.widget.EditText;
 import com.bluebot.R;
 import com.bluebot.ui.RequestProcessor;
 import com.bluebot.ui.ResponseHandler;
+import com.bluebot.ui.UIRequestTypes;
+import com.bluebot.ui.UIResponseType;
 
 import java.util.Map;
 
