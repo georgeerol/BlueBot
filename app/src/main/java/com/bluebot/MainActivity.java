@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     boolean right = false;
     boolean stop = false;
 
-    BluetoothSPP bluetooth;
+    public static BluetoothSPP bluetooth;
     Button connect;
 
     @Override
