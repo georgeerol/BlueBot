@@ -44,7 +44,7 @@ public class BlueBotIDEActivity extends AppCompatActivity implements ResponseHan
     }
 
     @Override
-    public void responseForRequest(String requestType, final Map<String, String> response) {
+    public void responseForRequest(String requestType, final Map<String, Object> response) {
         runOnUiThread(new Runnable() {
             public void run() {
                 if (response.containsKey(UIResponseType.ERROR)) {

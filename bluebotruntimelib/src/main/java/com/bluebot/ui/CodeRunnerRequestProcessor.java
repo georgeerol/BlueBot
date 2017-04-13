@@ -2,6 +2,7 @@ package com.bluebot.ui;
 
 import com.bluebot.runtime.runner.BlueCodeRunner;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.Executor;
@@ -18,6 +19,7 @@ class CodeRunnerRequestProcessor implements RequestProcessor, Runnable {
     private boolean runIndefinitely;
     Executor executor = Executors.newSingleThreadExecutor();
     private Thread workerThread;
+    private ResponseHandler responseHandler;
 
     public CodeRunnerRequestProcessor(BlueCodeRunner blueCodeRunner) {
         this.blueCodeRunner = blueCodeRunner;
@@ -25,7 +27,7 @@ class CodeRunnerRequestProcessor implements RequestProcessor, Runnable {
 
     @Override
     public void bind(ResponseHandler responseHandler) {
-
+        this.responseHandler = responseHandler;
     }
 
     @Override
@@ -49,8 +51,23 @@ class CodeRunnerRequestProcessor implements RequestProcessor, Runnable {
         while(! requestData.isEmpty()) {
             final Object data;
             synchronized (requestData) { data = requestData.remove(); }
-            blueCodeRunner.run(String.valueOf(data));
+            try { blueCodeRunner.run(String.valueOf(data)); }
+            catch (final IllegalArgumentException e) {
+                final HashMap<String, Object> response = new HashMap<String, Object>() {{
+                    put(UIResponseType.STATUS, UIResponseType.ERROR);
+                    put(UIResponseType.DETAIL, e);
+                }};
+                respondWith(UIRequestTypes.EXECUTE_CODE, response);
+                continue;
+            }
+            respondWith(UIRequestTypes.EXECUTE_CODE, new HashMap<String, Object>() {{
+                put(UIResponseType.STATUS, UIResponseType.SUCCESS);
+            }});
         }
+    }
+
+    private void respondWith(String requestType, HashMap<String, Object> responseData) {
+        if (responseHandler!=null) { responseHandler.responseForRequest(requestType, responseData); }
     }
 
     public void setRunIndefinitely(boolean runIndefinitely) {

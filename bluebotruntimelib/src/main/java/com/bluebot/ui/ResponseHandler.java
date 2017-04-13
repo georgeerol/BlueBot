@@ -8,5 +8,5 @@ import java.util.Map;
  */
 
 public interface ResponseHandler {
-    void responseForRequest(String requestType, Map<String, String> response);
+    void responseForRequest(String requestType, Map<String, Object> response);
 }
