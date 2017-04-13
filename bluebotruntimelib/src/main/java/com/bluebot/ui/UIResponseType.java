@@ -8,4 +8,6 @@ package com.bluebot.ui;
 public class UIResponseType {
     public static final String ERROR = "ERROR";
     public static final String SUCCESS = "SUCCESS";
+    public static final String DETAIL = "DETAIL";
+    public static String STATUS = "STATUS";
 }

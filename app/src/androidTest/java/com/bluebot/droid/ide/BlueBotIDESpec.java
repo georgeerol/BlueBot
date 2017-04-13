@@ -74,7 +74,7 @@ public class BlueBotIDESpec implements RequestProcessor {
         //Given
         theIDEActivityShouldBindTheRequestProcessorWhenSet();
         //When we have an error response
-        Map<String,String> response = new HashMap<String,String>(){{ put(UIResponseType.ERROR,"Stupidity Error!"); }};
+        Map<String,Object> response = new HashMap<String,Object>(){{ put(UIResponseType.ERROR,"Stupidity Error!"); }};
         //And we send it to the responseHandler...
         responseHandlerPassedToBind.responseForRequest(UIRequestTypes.EXECUTE_CODE, response);
         //Then the UI should light up with the error
@@ -86,7 +86,7 @@ public class BlueBotIDESpec implements RequestProcessor {
         //Given
         theIDEActivityShouldBindTheRequestProcessorWhenSet();
         //When we have an error response
-        Map<String,String> response = new HashMap<String,String>(){{ put(UIResponseType.SUCCESS,""); }};
+        Map<String,Object> response = new HashMap<String,Object>(){{ put(UIResponseType.SUCCESS,""); }};
         //And we send it to the responseHandler...
         responseHandlerPassedToBind.responseForRequest(UIRequestTypes.EXECUTE_CODE, response);
         //Then the UI should **NOT** light up with the error
