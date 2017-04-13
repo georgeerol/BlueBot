@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.bluebot.droid.ide.BlueBotIDEActivity;
+
 import app.akexorcist.bluetotohspp.library.BluetoothSPP;
 import app.akexorcist.bluetotohspp.library.BluetoothState;
 import app.akexorcist.bluetotohspp.library.DeviceList;
@@ -44,6 +46,13 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
             //close the Activity
             finish();
         }
+        findViewById(R.id.ideButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Intent intent = new Intent(getApplicationContext(), BlueBotIDEActivity.class);
+                startActivity(intent);
+            }
+        });
         setBluetoothListener();
         setConnectListener();
         setButtonsOnTouchListener();
