@@ -102,7 +102,6 @@ public class CodeRunnerRequestProcessorSpec {
             super.requestProcessor.setRunIndefinitely(true);
             waitForAllProgramsAndClearQueue();
             super.requestProcessor.setRunIndefinitely(false);
-            synchronized (this) { wait(1000); }
             super.requestProcessor.processRequest(UIRequestTypes.EXECUTE_CODE,"fourth program");
             synchronized (this) { wait(1000); }
             assertEquals("Should run the fourth program.", 0, super.programsPassedToRun.size());

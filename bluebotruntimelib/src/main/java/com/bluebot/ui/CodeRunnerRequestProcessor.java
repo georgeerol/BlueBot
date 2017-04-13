@@ -4,6 +4,8 @@ import com.bluebot.runtime.runner.BlueCodeRunner;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 /**
  * Created by Clifton Craig on 4/11/17.
@@ -14,6 +16,7 @@ class CodeRunnerRequestProcessor implements RequestProcessor, Runnable {
     private Queue requestData = new LinkedList();
     private BlueCodeRunner blueCodeRunner;
     private boolean runIndefinitely;
+    Executor executor = Executors.newSingleThreadExecutor();
     private Thread workerThread;
 
     public CodeRunnerRequestProcessor(BlueCodeRunner blueCodeRunner) {
@@ -52,8 +55,8 @@ class CodeRunnerRequestProcessor implements RequestProcessor, Runnable {
 
     public void setRunIndefinitely(boolean runIndefinitely) {
         this.runIndefinitely = runIndefinitely;
-        workerThread = new Thread(this);
-        workerThread.setDaemon(true);
-        workerThread.start();
+        if (runIndefinitely) {
+            executor.execute(this);
+        }
     }
 }
