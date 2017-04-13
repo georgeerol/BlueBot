@@ -13,7 +13,7 @@ import java.util.concurrent.Executors;
  * Copyright GE 4/11/17
  */
 
-class CodeRunnerRequestProcessor implements RequestProcessor, Runnable {
+public class CodeRunnerRequestProcessor implements RequestProcessor, Runnable {
     private Queue requestData = new LinkedList();
     private BlueCodeRunner blueCodeRunner;
     private boolean runIndefinitely;
