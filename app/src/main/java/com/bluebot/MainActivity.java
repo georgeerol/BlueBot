@@ -25,14 +25,14 @@ import static com.bluebot.runtime.bluetooth.BluetoothCodes.STOP;
 
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
 
-    boolean forward = false;
-    boolean backward = false;
-    boolean left = false;
-    boolean right = false;
-    boolean stop = false;
+    private boolean forward = false;
+    private boolean backward = false;
+    private boolean left = false;
+    private boolean right = false;
+    private boolean stop = false;
 
     private BluetoothSPP bluetooth;
-    Button connect;
+    private Button connect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

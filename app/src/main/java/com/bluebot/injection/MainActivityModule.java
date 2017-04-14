@@ -24,7 +24,7 @@ class MainActivityModule implements InjectionModule{
     }
 
     private BluetoothSPP lazyGetBluetoothSPP() {
-        if(! sharedComponents.has(BluetoothSPP.class))
+        if(sharedComponents.doesNotHave(BluetoothSPP.class))
             sharedComponents.put(BluetoothSPP.class, new BluetoothSPP(sharedComponents.get(Context.class)));
         return sharedComponents.get(BluetoothSPP.class);
     }

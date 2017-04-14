@@ -9,5 +9,5 @@ public class UIResponseType {
     public static final String ERROR = "ERROR";
     public static final String SUCCESS = "SUCCESS";
     public static final String DETAIL = "DETAIL";
-    public static String STATUS = "STATUS";
+    public static final String STATUS = "STATUS";
 }

@@ -24,7 +24,7 @@ import static org.junit.Assert.assertTrue;
 public class CodeRunnerRequestProcessorSpec {
 
     private CodeRunnerRequestProcessor requestProcessor;
-    private List<String> programsPassedToRun = new LinkedList<>();
+    private final List<String> programsPassedToRun = new LinkedList<>();
 
     @Before
     public void setUp() throws Exception {
@@ -122,7 +122,7 @@ public class CodeRunnerRequestProcessorSpec {
         private String requestTypeGivenToBoundResponseHandler;
         boolean responseHandlerWasInvoked;
         boolean mockRunnerShouldThrowAnException;
-        private IllegalArgumentException testException = new IllegalArgumentException("<Bad code>");
+        private final IllegalArgumentException testException = new IllegalArgumentException("<Bad code>");
 
         @Before
         public void setUp() throws Exception {
@@ -155,7 +155,7 @@ public class CodeRunnerRequestProcessorSpec {
             assertTrue("Should invoke the response handler.", responseHandlerWasInvoked);
             assertEquals("Request type given to the response handler should match what was given to processRequest.",
                     requestTypeGivenToBoundResponseHandler, UIRequestTypes.EXECUTE_CODE);
-            assertEquals(new HashMap<String, String>() {{
+            assertEquals(new HashMap<String, Object>() {{
                 put(UIResponseType.STATUS, UIResponseType.SUCCESS);
             }},responseGivenToBoundResponseHandler);
         }

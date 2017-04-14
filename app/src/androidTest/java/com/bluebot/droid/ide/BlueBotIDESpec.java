@@ -34,7 +34,7 @@ import static org.junit.Assert.assertNotNull;
 @LargeTest
 public class BlueBotIDESpec implements RequestProcessor {
     @Rule
-    public ActivityTestRule<BlueBotIDEActivity> activityTestRule = new ActivityTestRule(BlueBotIDEActivity.class);
+    public final ActivityTestRule<BlueBotIDEActivity> activityTestRule = new ActivityTestRule<>(BlueBotIDEActivity.class);
     private String dataPassedToRequestProcessor;
     private String requestTypePassedToRequestProcessor;
     private ResponseHandler responseHandlerPassedToBind;
