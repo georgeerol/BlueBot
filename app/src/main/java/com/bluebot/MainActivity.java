@@ -31,21 +31,15 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     boolean right = false;
     boolean stop = false;
 
-    public static BluetoothSPP bluetooth;
+    private BluetoothSPP bluetooth;
     Button connect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bluetooth = new BluetoothSPP(this);
         connect = (Button) findViewById(R.id.connect);
 
-        if (!bluetooth.isBluetoothAvailable()) {
-            Toast.makeText(getApplicationContext(), "Bluetooth is not available", Toast.LENGTH_SHORT).show();
-            //close the Activity
-            finish();
-        }
         findViewById(R.id.ideButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 startActivity(intent);
             }
         });
-        setBluetoothListener();
         setConnectListener();
         setButtonsOnTouchListener();
 
@@ -193,5 +186,15 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     private void send(String command) {
         bluetooth.send(command,true);
+    }
+
+    public void setBluetooth(BluetoothSPP bluetooth) {
+        this.bluetooth = bluetooth;
+        if (!bluetooth.isBluetoothAvailable()) {
+            Toast.makeText(getApplicationContext(), "Bluetooth is not available", Toast.LENGTH_SHORT).show();
+            //close the Activity
+            finish();
+        }
+        setBluetoothListener();
     }
 }
