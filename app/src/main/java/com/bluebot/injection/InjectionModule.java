@@ -7,4 +7,6 @@ package com.bluebot.injection;
 
 interface InjectionModule {
     void inject(Object object);
+
+    void setSharedComponents(SharedComponents sharedComponents);
 }

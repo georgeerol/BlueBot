@@ -1,6 +1,5 @@
 package com.bluebot.injection;
 
-import com.bluebot.MainActivity;
 import com.bluebot.droid.ide.BlueBotIDEActivity;
 import com.bluebot.runtime.bluetooth.BluetoothCommandSink;
 import com.bluebot.runtime.runner.BlueCodeRunner;
@@ -14,14 +13,21 @@ import app.akexorcist.bluetotohspp.library.BluetoothSPP;
  */
 
 class BlueBotIDEActivityModule implements InjectionModule{
+    private SharedComponents sharedComponents;
+
     @Override
     public void inject(Object object) {
         injectActivity((BlueBotIDEActivity)object);
     }
 
+    @Override
+    public void setSharedComponents(SharedComponents sharedComponents) {
+        this.sharedComponents = sharedComponents;
+    }
+
     private void injectActivity(final BlueBotIDEActivity blueBotIDEActivity) {
         final CodeRunnerRequestProcessor requestProcessor = new CodeRunnerRequestProcessor(new BlueCodeRunner(new BluetoothCommandSink() {
-            BluetoothSPP bluetooth = MainActivity.bluetooth;
+            BluetoothSPP bluetooth = sharedComponents.get(BluetoothSPP.class);
 
             @Override
             public void send(String command) {
