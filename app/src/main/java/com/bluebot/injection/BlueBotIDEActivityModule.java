@@ -27,7 +27,7 @@ class BlueBotIDEActivityModule implements InjectionModule{
 
     private void injectActivity(final BlueBotIDEActivity blueBotIDEActivity) {
         final CodeRunnerRequestProcessor requestProcessor = new CodeRunnerRequestProcessor(new BlueCodeRunner(new BluetoothCommandSink() {
-            BluetoothSPP bluetooth = sharedComponents.get(BluetoothSPP.class);
+            private final BluetoothSPP bluetooth = sharedComponents.get(BluetoothSPP.class);
 
             @Override
             public void send(String command) {

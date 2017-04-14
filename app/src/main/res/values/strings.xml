@@ -13,7 +13,7 @@
     <string name="forward">Forward</string>
     <string name="backward">backward</string>
     <string name="ide">IDE</string>
-    <string name="connecting">Connecting...</string>
+    <string name="connecting">Connecting…</string>
     <string name="connected_to">Connected to %1$s</string>
     <string name="connection_lost">Connection lost</string>
     <string name="unable_to_connect">Unable to connect</string>

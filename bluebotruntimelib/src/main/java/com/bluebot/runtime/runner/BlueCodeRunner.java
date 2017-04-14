@@ -3,14 +3,14 @@ package com.bluebot.runtime.runner;
 import com.bluebot.runtime.bluetooth.BluetoothCodes;
 import com.bluebot.runtime.bluetooth.BluetoothCommandSink;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class BlueCodeRunner {
-    private static final List<String> VALID_COMMANDS = Arrays.asList("move");
-    private BluetoothCommandSink bluetoothCommandSink;
+    private static final List<String> VALID_COMMANDS = Collections.singletonList("move");
+    private final BluetoothCommandSink bluetoothCommandSink;
 
     public BlueCodeRunner(BluetoothCommandSink bluetoothCommandSink) {
         this.bluetoothCommandSink = bluetoothCommandSink;
@@ -36,11 +36,9 @@ public class BlueCodeRunner {
             }
             if(!isValidCommand(tokens[1]))
                 throw new IllegalArgumentException("A valid command should follow the line number.");
-            final String command1 = tokens[2];
             if(tokens.length > 3)
-                throw new IllegalArgumentException("Line " + tokens[0] + ": Unexpected command or text [" + tokens[3] + "] after [" + command1 + "]");
-            final String command = command1;
-            sortedSource.put(lineNumber, command);
+                throw new IllegalArgumentException("Line " + tokens[0] + ": Unexpected command or text [" + tokens[3] + "] after [" + tokens[2] + "]");
+            sortedSource.put(lineNumber, tokens[2]);
         }
         return sortedSource;
     }
@@ -50,14 +48,17 @@ public class BlueCodeRunner {
     }
 
     private String xLate(String command) {
-        if(command.equals("forward"))
-            return BluetoothCodes.FORWARD;
-        else if(command.equals("backward"))
-            return BluetoothCodes.BACKWARD;
-        else if(command.equals("left"))
-            return BluetoothCodes.LEFT;
-        else if(command.equals("right"))
-            return BluetoothCodes.RIGHT;
-        else return "?";
+        switch (command) {
+            case "forward":
+                return BluetoothCodes.FORWARD;
+            case "backward":
+                return BluetoothCodes.BACKWARD;
+            case "left":
+                return BluetoothCodes.LEFT;
+            case "right":
+                return BluetoothCodes.RIGHT;
+            default:
+                return "?";
+        }
     }
 }

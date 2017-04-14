@@ -29,12 +29,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @LargeTest
 public class MainActivitySpec {
     @Rule
-    public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule(MainActivity.class);
-    private MainActivity activity;
+    public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<>(MainActivity.class);
 
     @Before
     public void setUp() throws Exception {
-        this.activity = activityTestRule.getActivity();
         Intents.init();
     }
 
@@ -52,6 +50,6 @@ public class MainActivitySpec {
     @Test
     public void clickingTheIDEButtonShouldLaunchTheIDEActivity() throws Exception {
         onView(withText("IDE")).perform(click());
-        intended(hasComponent(BlueBotIDEActivity.class.getName().toString()));
+        intended(hasComponent(BlueBotIDEActivity.class.getName()));
     }
 }

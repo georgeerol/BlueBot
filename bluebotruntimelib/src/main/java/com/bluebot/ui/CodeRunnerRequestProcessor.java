@@ -14,11 +14,10 @@ import java.util.concurrent.Executors;
  */
 
 public class CodeRunnerRequestProcessor implements RequestProcessor, Runnable {
-    private Queue requestData = new LinkedList();
-    private BlueCodeRunner blueCodeRunner;
+    private final Queue<Object> requestData = new LinkedList<>();
+    private final BlueCodeRunner blueCodeRunner;
     private boolean runIndefinitely;
-    Executor executor = Executors.newSingleThreadExecutor();
-    private Thread workerThread;
+    private final Executor executor = Executors.newSingleThreadExecutor();
     private ResponseHandler responseHandler;
 
     public CodeRunnerRequestProcessor(BlueCodeRunner blueCodeRunner) {
@@ -57,17 +56,17 @@ public class CodeRunnerRequestProcessor implements RequestProcessor, Runnable {
                     put(UIResponseType.STATUS, UIResponseType.ERROR);
                     put(UIResponseType.DETAIL, e);
                 }};
-                respondWith(UIRequestTypes.EXECUTE_CODE, response);
+                respondWith(response);
                 continue;
             }
-            respondWith(UIRequestTypes.EXECUTE_CODE, new HashMap<String, Object>() {{
+            respondWith(new HashMap<String, Object>() {{
                 put(UIResponseType.STATUS, UIResponseType.SUCCESS);
             }});
         }
     }
 
-    private void respondWith(String requestType, HashMap<String, Object> responseData) {
-        if (responseHandler!=null) { responseHandler.responseForRequest(requestType, responseData); }
+    private void respondWith(HashMap<String, Object> responseData) {
+        if (responseHandler!=null) { responseHandler.responseForRequest(UIRequestTypes.EXECUTE_CODE, responseData); }
     }
 
     public void setRunIndefinitely(boolean runIndefinitely) {

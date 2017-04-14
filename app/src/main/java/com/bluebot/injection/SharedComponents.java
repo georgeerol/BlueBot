@@ -6,7 +6,7 @@ package com.bluebot.injection;
  */
 
 interface SharedComponents {
-    boolean has(Class aClass);
+    boolean doesNotHave(Class aClass);
 
     <T> void put(Class<T> aClass, T instance);
 

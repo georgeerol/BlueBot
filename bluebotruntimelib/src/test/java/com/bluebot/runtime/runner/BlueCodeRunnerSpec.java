@@ -28,7 +28,7 @@ public class BlueCodeRunnerSpec {
 
     private static final Random random = new Random();
     private BlueCodeRunner blueCodeRunner;
-    private List<String> actualCommands = new ArrayList<>();
+    private final List<String> actualCommands = new ArrayList<>();
 
     @Before
     public void setUp() throws Exception {
