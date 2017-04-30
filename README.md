@@ -45,6 +45,13 @@ Pay attention to the direction of the black and red wires.
 
 # ![Add Ultrasonic to Chassis](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/AddUltrasonicToChassis.JPG)
 
+### Connect the Servo SG90 to the Sensor V5 board
+1. Connect servo wires to pin 3 of the Sensor V5 Board
+* Brown wire(ground) -> G
+* Red wire(Voltage) -> V
+* Orange wire (Signal) -> S
 
+# ![Add Ultrasonic to Chassis](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/ServoToSensorBoard.JPG)
+ 
 ## Android Rc Car Diagram
 ![RC Car Diagram](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RCCarDiagram.PNG)
