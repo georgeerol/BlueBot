@@ -17,12 +17,13 @@
         tools:layout_editor_absoluteY="0dp" />
 
 
-    <Button
+    <ToggleButton
         android:id="@+id/auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Auto Pilot" />
+        android:text="Auto Pilot"
+        />
 
     <Button
         android:id="@+id/right"

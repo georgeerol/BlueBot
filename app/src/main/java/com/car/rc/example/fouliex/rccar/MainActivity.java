@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     boolean left = false;
     boolean right = false;
     boolean auto = false;
-    boolean stop = false;
+    boolean stop = false; 
 
     BluetoothSPP bluetooth;
     Button connect;
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         findViewById(R.id.backward).setOnTouchListener(this);
         findViewById(R.id.left).setOnTouchListener(this);
         findViewById(R.id.right).setOnTouchListener(this);
-        findViewById(R.id.auto).setOnTouchListener(this);
+     // findViewById(R.id.auto).setOnClickListener();
     }
 
     /**
