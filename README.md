@@ -1,5 +1,5 @@
 # ![RC Car Logo](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RobotCarLogo.jpg) Android RC Car
-## Assemble the RC Car
+## Assemble the RC Car(In Progress)
 ### Setup DC speed motor
 1. M3 nut
 2. Aluminium
