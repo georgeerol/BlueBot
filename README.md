@@ -1,4 +1,18 @@
 # ![RC Car Logo](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RobotCarLogo.jpg) Android RC Car
+
+## Drive System
+### How a Diode Works
+### How a Bipolar Junction Transistor
+### H-Bridge Circuit
+### Arduino Motor Shield
+### DC Motor Construction
+### DC Motor Operation
+### DC Motor Speed Control
+### Drive System Build
+
+## Sensor System
+
+
 ## Assemble the RC Car(In Progress)
 ### Setup DC speed motor
 1. M3 nut
