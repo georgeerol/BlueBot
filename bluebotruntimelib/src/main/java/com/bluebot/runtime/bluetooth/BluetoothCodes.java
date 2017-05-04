@@ -6,6 +6,7 @@ package com.bluebot.runtime.bluetooth;
  */
 
 public class BluetoothCodes {
+    public static final String AUTONOMOUS = "A";
     public static final String FORWARD = "f";
     public static final String BACKWARD = "b";
     public static final String LEFT = "l";
