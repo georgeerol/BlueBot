@@ -18,18 +18,18 @@
 
 
     <Button
-        android:id="@+id/stop"
+        android:id="@+id/autonomous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="@string/stop" />
+        android:text="@string/auto" />
 
     <Button
         android:id="@+id/right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/stop"
-        android:layout_alignBottom="@+id/stop"
+        android:layout_alignBaseline="@+id/autonomous"
+        android:layout_alignBottom="@+id/autonomous"
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
         android:layout_toEndOf="@+id/backward"
@@ -41,13 +41,11 @@
         android:id="@+id/left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_alignBaseline="@+id/stop"
-        android:layout_alignBottom="@+id/stop"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_above="@+id/backward"
         android:layout_toLeftOf="@+id/backward"
-        android:layout_toStartOf="@+id/backward"
-        />
+        android:layout_toStartOf="@+id/backward" />
 
     <Button
         android:text="@string/forward"
@@ -55,13 +53,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/forward"
         android:layout_marginBottom="24dp"
-        android:layout_above="@+id/stop"
+        android:layout_above="@+id/autonomous"
         android:layout_centerHorizontal="true" />
     <Button
         android:id="@+id/backward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/stop"
+        android:layout_below="@+id/autonomous"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:text="@string/backward" />
@@ -70,8 +68,46 @@
         android:id="@+id/ideButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/stop"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/stop"
-        android:text="@string/ide" />
+        android:text="@string/ide"
+        android:layout_below="@+id/connect"
+        android:layout_alignLeft="@+id/autonomous"
+        android:layout_alignStart="@+id/autonomous"
+        android:layout_marginTop="22dp" />
+
+    <TextView
+        android:id="@+id/sensorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/backward"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"
+        android:text="Sensor" />
+
+    <Button
+        android:id="@+id/sensorCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/autonomous"
+        android:layout_alignStart="@+id/autonomous"
+        android:layout_below="@+id/sensorText"
+        android:layout_marginTop="19dp"
+        android:text="@string/center" />
+
+    <Button
+        android:id="@+id/sensorLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/left"
+        android:layout_alignStart="@+id/left"
+        android:layout_alignTop="@+id/sensorCenter"
+        android:text="@string/left" />
+
+    <Button
+        android:id="@+id/sensroRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/right"
+        android:layout_alignStart="@+id/right"
+        android:layout_alignTop="@+id/sensorCenter"
+        android:text="@string/right" />
 </RelativeLayout>

@@ -15,6 +15,7 @@ import app.akexorcist.bluetotohspp.library.BluetoothSPP;
 import app.akexorcist.bluetotohspp.library.BluetoothState;
 import app.akexorcist.bluetotohspp.library.DeviceList;
 
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.AUTONOMOUS;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.BACKWARD;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.FORWARD;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.LEFT;
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         findViewById(R.id.backward).setOnTouchListener(this);
         findViewById(R.id.left).setOnTouchListener(this);
         findViewById(R.id.right).setOnTouchListener(this);
-        findViewById(R.id.stop).setOnTouchListener(this);
+        findViewById(R.id.autonomous).setOnTouchListener(this);
     }
 
     private void setConnectListener() {
@@ -152,9 +153,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 if (event.getAction() == MotionEvent.ACTION_DOWN) right = true;
                 else if (event.getAction() == MotionEvent.ACTION_UP) right = false;
                 break;
-            case R.id.stop:
-                if (event.getAction() == MotionEvent.ACTION_DOWN) stop = true;
-                else if (event.getAction() == MotionEvent.ACTION_UP) stop = false;
+            case R.id.autonomous:
+                if (event.getAction() == MotionEvent.ACTION_UP) send(AUTONOMOUS);
                 break;
         }
 

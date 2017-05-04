@@ -7,7 +7,7 @@
     <string name="content_desc_error_message">Error message</string>
     <string name="error">Error!</string>
     <string name="connect">Connect</string>
-    <string name="stop">Stop</string>
+    <string name="auto">Auto</string>
     <string name="right">Right</string>
     <string name="left">Left</string>
     <string name="forward">Forward</string>
@@ -17,4 +17,5 @@
     <string name="connected_to">Connected to %1$s</string>
     <string name="connection_lost">Connection lost</string>
     <string name="unable_to_connect">Unable to connect</string>
+    <string name="center">Center</string>
 </resources>
