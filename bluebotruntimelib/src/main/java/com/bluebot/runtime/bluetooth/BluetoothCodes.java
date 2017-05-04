@@ -8,9 +8,9 @@ package com.bluebot.runtime.bluetooth;
 public class BluetoothCodes {
     public static final String FORWARD = "f";
     public static final String BACKWARD = "b";
-    public static final String LEFT = "r";
-    public static final String RIGHT = "l";
+    public static final String LEFT = "l";
+    public static final String RIGHT = "r";
     public static final String STOP = "s";
-    public static final String LEFTBACK = "R";
-    public static final String RIGHTBACK = "L";
+    public static final String LEFTBACK = "L";
+    public static final String RIGHTBACK = "R";
 }
