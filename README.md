@@ -1,4 +1,4 @@
-# ![RC Car Logo](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RobotCarLogo.jpg) Android RC Car
+# ![RC Car Logo](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RobotCarLogo.jpg) Android RC Car(In Progress)
 
 ## Drive System
 ### How a Diode Works
@@ -14,6 +14,7 @@
 
 
 ## Assemble the RC Car(In Progress)
+You can get the Arduino Smart Robot Car Kit from Amazon(https://www.amazon.com/gp/product/B01DPH0SWY/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
 ### Setup DC speed motor
 1. M3 nut
 2. Aluminium
