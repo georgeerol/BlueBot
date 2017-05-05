@@ -14,7 +14,7 @@
 
 
 ## Assemble the RC Car
-You can get the Arduino Smart Robot Car Kit from Amazon(https://www.amazon.com/gp/product/B01DPH0SWY/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
+You can get the Arduino Smart Robot Car Kit from [**Amazon**](https://www.amazon.com/gp/product/B01DPH0SWY/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
 ### Setup DC speed motor
 1. M3 nut
 2. Aluminium
