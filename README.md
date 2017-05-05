@@ -68,5 +68,16 @@ Pay attention to the direction of the black and red wires.
 
 # ![Add Ultrasonic to Chassis](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/ServoToSensorBoard.JPG)
  
+### Add the chassis together
+* M3 hex screws 3*10mm
+* 3*40 copper column 
+# ![Add the chassis](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/AddChassis.JPG)
+
+### Add the tires
+* Tires
+* The main body
+
+# ![Add the tires](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/AddTheTires.JPG)
+
 ## Android Rc Car Diagram
 ![RC Car Diagram](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RCCarDiagram.PNG)
