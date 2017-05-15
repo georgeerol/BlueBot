@@ -1,11 +1,10 @@
 # ![RC Car Logo](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RobotCarLogo.jpg) Android RC Car(In Progress)
 
-## Drive System
-### How a Diode Works
-### How a Bipolar Junction Transistor
-### H-Bridge Circuit
-### Arduino Motor Shield
+
 ### DC Motor Construction
+1. Frame (yoke) - provides structural support for poles
+2. Provides low reluctance path for magnetic flux to flow between poles
+
 ### DC Motor Operation
 ### DC Motor Speed Control
 ### Drive System Build
