@@ -1,17 +1,5 @@
 # ![RC Car Logo](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RobotCarLogo.jpg) Android RC Car(In Progress)
 
-## Drive System
-### How a Diode Works
-### How a Bipolar Junction Transistor
-### H-Bridge Circuit
-### Arduino Motor Shield
-### DC Motor Construction
-### DC Motor Operation
-### DC Motor Speed Control
-### Drive System Build
-
-## Sensor System
-
 
 ## Assemble the RC Car
 You can get the Arduino Smart Robot Car Kit from [**Amazon**](https://www.amazon.com/gp/product/B01DPH0SWY/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
