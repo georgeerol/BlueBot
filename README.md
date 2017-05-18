@@ -8,7 +8,7 @@
 
 #### DC Motor Field Poles
 * Composes of Pole Core and Pole shoe. Each poles generates magnetic flux when corresponding winding 
-is energized.Poles are build from thin lamination of steel.Poles ensure that max flux is available
+is energized. Poles are build from thin lamination of steel.Poles ensure that max flux is available
 when interacting with large surface area of rotor as it spins
 # ![Field Poles](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/FieldPoles.JPG)
 
@@ -16,9 +16,14 @@ when interacting with large surface area of rotor as it spins
 * A Laminate copper wire loops around each pole core to form a winding.The Field Winding produces
  magnetic flux when energized via an external source. Most small DC motors use permanent magnets
  instead of coils.
- # ![Field Poles](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/MotorFieldPolesWinding.JPG)
+ # ![Motor Field Poles Winding](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/MotorFieldPolesWinding.JPG)
  
- 
+#### DC Motor Rotor
+* The rotor has a cylindrical shape and it's mount around the motor shaft. It's composed of thin
+laminate discs of steel. Wedge shaped slots are punched in each disc forming rotor teeth and slots. 
+Due to its high permeability, the rotor windings generate magnetic flux when energized.
+
+# ![Motor Field Poles Winding](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/MotorRotor.JPG)
 
 
 ## Assemble the RC Car
