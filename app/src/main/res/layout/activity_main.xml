@@ -18,18 +18,18 @@
 
 
     <Button
-        android:id="@+id/stop"
+        android:id="@+id/auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Stop" />
+        android:text="Auto Pilot" />
 
     <Button
         android:id="@+id/right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/stop"
-        android:layout_alignBottom="@+id/stop"
+        android:layout_alignBaseline="@+id/auto"
+        android:layout_alignBottom="@+id/auto"
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
         android:layout_toEndOf="@+id/backward"
@@ -43,8 +43,8 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="24dp"
         android:layout_marginEnd="24dp"
-        android:layout_alignBaseline="@+id/stop"
-        android:layout_alignBottom="@+id/stop"
+        android:layout_alignBaseline="@+id/auto"
+        android:layout_alignBottom="@+id/auto"
         android:layout_toLeftOf="@+id/backward"
         android:layout_toStartOf="@+id/backward"
         />
@@ -55,13 +55,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/forward"
         android:layout_marginBottom="24dp"
-        android:layout_above="@+id/stop"
+        android:layout_above="@+id/auto"
         android:layout_centerHorizontal="true" />
     <Button
         android:id="@+id/backward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/stop"
+        android:layout_below="@+id/auto"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
         android:text="backward" />
