@@ -11,7 +11,7 @@
 * Composes of Pole Core and Pole shoe. Each poles generates magnetic flux when corresponding winding 
 is energized.Poles are build from thin lamination of steel.Poles ensure that max flux is available
 when interacting with large surface area of rotor as it spins
-# ![Field Poles](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/FildPoles.JPG)
+# ![Field Poles](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/FieldPoles.JPG)
 
 ## DC Motor Field Pole Winding
 * A Laminate copper wire loops around each pole core to form a winding.The Field Winding produces
