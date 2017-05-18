@@ -1,6 +1,5 @@
 # ![RC Car Logo](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RobotCarLogo.jpg) Android RC Car(In Progress)
 
-
 ### DC Motor Construction
 ## DC Motor Frame
 * Frame (yoke) provides structural support for poles and low reluctance path for magnetic flux to
@@ -20,11 +19,6 @@ when interacting with large surface area of rotor as it spins
  # ![Field Poles](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/MotorFieldPolesWinding.JPG)
  
  
-### DC Motor Operation
-### DC Motor Speed Control
-### Drive System Build
-
-## Sensor System
 
 
 ## Assemble the RC Car
