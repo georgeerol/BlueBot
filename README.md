@@ -1,26 +1,24 @@
 # ![RC Car Logo](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RobotCarLogo.jpg) Android RC Car(In Progress)
 
 ### DC Motor Construction
-## DC Motor Frame
+#### DC Motor Frame
 * Frame (yoke) provides structural support for poles and low reluctance path for magnetic flux to
  flow between poles. THe frame is made of steel or cast iron.
 # ![Motors Frame](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/MotorFrame.JPG)
 
-## DC Motor Field Poles
+#### DC Motor Field Poles
 * Composes of Pole Core and Pole shoe. Each poles generates magnetic flux when corresponding winding 
 is energized.Poles are build from thin lamination of steel.Poles ensure that max flux is available
 when interacting with large surface area of rotor as it spins
 # ![Field Poles](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/FieldPoles.JPG)
 
-## DC Motor Field Pole Winding
+#### DC Motor Field Pole Winding
 * A Laminate copper wire loops around each pole core to form a winding.The Field Winding produces
  magnetic flux when energized via an external source. Most small DC motors use permanent magnets
  instead of coils.
  # ![Field Poles](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/MotorFieldPolesWinding.JPG)
  
  
-
-
 ## Assemble the RC Car
 You can get the Arduino Smart Robot Car Kit from [**Amazon**](https://www.amazon.com/gp/product/B01DPH0SWY/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
 ### Setup DC speed motor
