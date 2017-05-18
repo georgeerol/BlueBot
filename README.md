@@ -2,9 +2,24 @@
 
 
 ### DC Motor Construction
-1. Frame (yoke) - provides structural support for poles
-2. Provides low reluctance path for magnetic flux to flow between poles
+## DC Motor Frame
+* Frame (yoke) provides structural support for poles and low reluctance path for magnetic flux to
+ flow between poles. THe frame is made of steel or cast iron.
+# ![Motors Frame](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/MotorFrame.JPG)
 
+## DC Motor Field Poles
+* Composes of Pole Core and Pole shoe. Each poles generates magnetic flux when corresponding winding 
+is energized.Poles are build from thin lamination of steel.Poles ensure that max flux is available
+when interacting with large surface area of rotor as it spins
+# ![Field Poles](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/FildPoles.JPG)
+
+## DC Motor Field Pole Winding
+* A Laminate copper wire loops around each pole core to form a winding.The Field Winding produces
+ magnetic flux when energized via an external source. Most small DC motors use permanent magnets
+ instead of coils.
+ # ![Field Poles](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/MotorFieldPolesWinding.JPG)
+ 
+ 
 ### DC Motor Operation
 ### DC Motor Speed Control
 ### Drive System Build
