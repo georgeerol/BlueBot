@@ -1,4 +1,4 @@
-**Android BlueBot**
+**BlueBot**
 
 An Android app that controls an Arduino based bot.
 # ![RC Car Logo](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RobotCarLogo.jpg) Android BlueBot(In Progress)
