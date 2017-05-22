@@ -28,7 +28,6 @@ import static org.junit.Assert.assertNotNull;
 
 /**
  * Created by Clifton Craig on 4/8/17.
- * Copyright GE 4/8/17
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -53,13 +52,14 @@ public class BlueBotIDESpec implements RequestProcessor {
     public void shouldHaveAButtonToRunCode() throws Exception {
         onView(withContentDescription("Run")).check(matches(isDisplayed()));
     }
+
     @Test
     public void theIDEShouldDependOnARequestProcessor() throws Exception {
         activityTestRule.getActivity().setRequestProcessor(this);
     }
 
     @Override
-    public void bind(ResponseHandler responseHandler){
+    public void bind(ResponseHandler responseHandler) {
         this.responseHandlerPassedToBind = responseHandler;
     }
 
@@ -74,7 +74,9 @@ public class BlueBotIDESpec implements RequestProcessor {
         //Given
         theIDEActivityShouldBindTheRequestProcessorWhenSet();
         //When we have an error response
-        Map<String,Object> response = new HashMap<String,Object>(){{ put(UIResponseType.ERROR,"Stupidity Error!"); }};
+        Map<String, Object> response = new HashMap<String, Object>() {{
+            put(UIResponseType.ERROR, "Stupidity Error!");
+        }};
         //And we send it to the responseHandler...
         responseHandlerPassedToBind.responseForRequest(UIRequestTypes.EXECUTE_CODE, response);
         //Then the UI should light up with the error
@@ -86,11 +88,13 @@ public class BlueBotIDESpec implements RequestProcessor {
         //Given
         theIDEActivityShouldBindTheRequestProcessorWhenSet();
         //When we have an error response
-        Map<String,Object> response = new HashMap<String,Object>(){{ put(UIResponseType.SUCCESS,""); }};
+        Map<String, Object> response = new HashMap<String, Object>() {{
+            put(UIResponseType.SUCCESS, "");
+        }};
         //And we send it to the responseHandler...
         responseHandlerPassedToBind.responseForRequest(UIRequestTypes.EXECUTE_CODE, response);
         //Then the UI should **NOT** light up with the error
-        onView(withContentDescription("Error message")).check(matches( not (isDisplayed())));
+        onView(withContentDescription("Error message")).check(matches(not(isDisplayed())));
     }
 
     @Test
@@ -121,7 +125,7 @@ public class BlueBotIDESpec implements RequestProcessor {
         onView(withContentDescription("Run")).perform(ViewActions.click());
 
         //Then our Code Executor should be asked to execute someBlueBotCode
-        assertEquals("An EXECUTE_CODE request should be given.", UIRequestTypes.EXECUTE_CODE,requestTypePassedToRequestProcessor);
+        assertEquals("An EXECUTE_CODE request should be given.", UIRequestTypes.EXECUTE_CODE, requestTypePassedToRequestProcessor);
         //And our Code Executor should be asked to execute someBlueBotCode
         assertEquals("The given code should be executed.", someBlueBotCode, dataPassedToRequestProcessor);
     }
