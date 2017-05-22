@@ -11,7 +11,6 @@ import java.util.Map;
 
 /**
  * Created by Clifton Craig on 4/12/17.
- * Copyright GE 4/12/17
  */
 
 public class Injector {

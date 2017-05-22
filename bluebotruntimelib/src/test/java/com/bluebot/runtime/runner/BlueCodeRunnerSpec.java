@@ -22,7 +22,6 @@ import static org.junit.Assert.fail;
 
 /**
  * Created by Clifton Craig on 4/9/17.
- * Copyright GE 4/9/17
  */
 public class BlueCodeRunnerSpec {
 

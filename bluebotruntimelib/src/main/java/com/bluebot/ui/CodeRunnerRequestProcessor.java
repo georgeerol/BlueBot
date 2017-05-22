@@ -10,7 +10,6 @@ import java.util.concurrent.Executors;
 
 /**
  * Created by Clifton Craig on 4/11/17.
- * Copyright GE 4/11/17
  */
 
 public class CodeRunnerRequestProcessor implements RequestProcessor, Runnable {

@@ -18,7 +18,6 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Created by Clifton Craig on 4/11/17.
- * Copyright GE 4/11/17
  */
 
 public class CodeRunnerRequestProcessorSpec {
