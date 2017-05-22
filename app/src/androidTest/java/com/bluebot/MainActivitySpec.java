@@ -23,7 +23,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 /**
  * Created by Clifton Craig on 4/12/17.
- * Copyright GE 4/12/17
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest

@@ -8,7 +8,6 @@ import app.akexorcist.bluetotohspp.library.BluetoothSPP;
 
 /**
  * Created by Clifton Craig on 4/13/17.
- * Copyright GE 4/13/17
  */
 
 class MainActivityModule implements InjectionModule{

@@ -9,7 +9,6 @@ import app.akexorcist.bluetotohspp.library.BluetoothSPP;
 
 /**
  * Created by Clifton Craig on 4/12/17.
- * Copyright GE 4/12/17
  */
 
 class BlueBotIDEActivityModule implements InjectionModule{

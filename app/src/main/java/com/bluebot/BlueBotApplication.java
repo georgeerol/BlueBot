@@ -8,7 +8,6 @@ import com.bluebot.injection.Injector;
 
 /**
  * Created by Clifton Craig on 4/12/17.
- * Copyright GE 4/12/17
  */
 
 public class BlueBotApplication extends Application {
