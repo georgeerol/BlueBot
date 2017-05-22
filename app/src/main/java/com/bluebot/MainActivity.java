@@ -24,6 +24,9 @@ import static com.bluebot.runtime.bluetooth.BluetoothCodes.RIGHT;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.RIGHTBACK;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.STOP;
 
+/**
+ * Created by George Fouche on 4/5/2017.
+ */
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
 
     private boolean forward = false;
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout. activity_main);
         connect = (Button) findViewById(R.id.connect);
 
         findViewById(R.id.ideButton).setOnClickListener(new View.OnClickListener() {
