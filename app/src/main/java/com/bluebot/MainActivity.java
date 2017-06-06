@@ -168,7 +168,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     }
 
     private void command() {
-
         if (stop) {
             send(STOP);
         } else if (forward) {
