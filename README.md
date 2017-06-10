@@ -1,6 +1,6 @@
 **BlueBot**
 
-An Android app that controls an Arduino based bot.
+A **Blue**tooth Android app that controls an Arduino based Ro**bot**.
 # ![RC Car Logo](https://github.com/fouliex/AndroidRcCar/blob/master/resources/images/RobotCarLogo.jpg) Android BlueBot(In Progress)
 ## Wiki Contents
 1. [**Assemble the RC Car**](https://github.com/fouliex/AndroidRcCar/wiki/Assemble-the-RC-Car)
