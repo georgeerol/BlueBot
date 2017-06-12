@@ -9,6 +9,7 @@ import com.bluebot.droid.ide.BlueBotIDEActivity;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,6 +25,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 /**
  * Created by Clifton Craig on 4/12/17.
  */
+@Ignore
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class MainActivitySpec {
