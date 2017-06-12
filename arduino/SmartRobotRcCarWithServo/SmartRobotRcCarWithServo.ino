@@ -36,7 +36,7 @@ void lookLeft(){
 
 
 void lookStraight(){
-  servo(140);
+  servo(90);
 }
 
 void servo(int angle){

@@ -20,6 +20,9 @@ import static com.bluebot.runtime.bluetooth.BluetoothCodes.BACKWARD;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.FORWARD;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.LEFT;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.LEFTBACK;
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.LOOKLEFT;
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.LOOKRIGHT;
+import static com.bluebot.runtime.bluetooth.BluetoothCodes.LOOKSTRAIGHT;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.RIGHT;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.RIGHTBACK;
 import static com.bluebot.runtime.bluetooth.BluetoothCodes.STOP;
@@ -35,13 +38,19 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private boolean right = false;
     private boolean stop = false;
 
+    //Servo
+    private boolean lookRight = false;
+    private boolean lookLeft = false;
+    private boolean lookStraight = false;
+
+
     private BluetoothSPP bluetooth;
     private Button connect;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout. activity_main);
+        setContentView(R.layout.activity_main);
         connect = (Button) findViewById(R.id.connect);
 
         findViewById(R.id.ideButton).setOnClickListener(new View.OnClickListener() {
@@ -99,6 +108,11 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         findViewById(R.id.left).setOnTouchListener(this);
         findViewById(R.id.right).setOnTouchListener(this);
         findViewById(R.id.autonomous).setOnTouchListener(this);
+        //Servo
+        findViewById(R.id.sensroRight).setOnTouchListener(this);
+        findViewById(R.id.sensorLeft).setOnTouchListener(this);
+        findViewById(R.id.sensorCenter).setOnTouchListener(this);
+
     }
 
     private void setConnectListener() {
@@ -156,8 +170,17 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                 if (event.getAction() == MotionEvent.ACTION_DOWN) right = true;
                 else if (event.getAction() == MotionEvent.ACTION_UP) right = false;
                 break;
-            case R.id.autonomous:
-                if (event.getAction() == MotionEvent.ACTION_UP) send(AUTONOMOUS);
+            case R.id.sensroRight:
+                if (event.getAction() == MotionEvent.ACTION_DOWN) lookRight = true;
+                else if (event.getAction() == MotionEvent.ACTION_UP) lookRight = false;
+                break;
+            case R.id.sensorLeft:
+                if (event.getAction() == MotionEvent.ACTION_DOWN) lookLeft = true;
+                else if (event.getAction() == MotionEvent.ACTION_UP) lookLeft = false;
+                break;
+            case R.id.sensorCenter:
+                if (event.getAction() == MotionEvent.ACTION_DOWN)lookStraight = true;
+                else if (event.getAction() == MotionEvent.ACTION_UP) lookStraight = false;
                 break;
         }
 
@@ -182,12 +205,15 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
             else send(STOP);
         } else if (left && !right) send(LEFT);
         else if (right) send(RIGHT);
+        else if (lookRight) send(LOOKRIGHT);
+        else if (lookLeft) send(LOOKLEFT);
+        else if (lookStraight)send(LOOKSTRAIGHT);
         else send(STOP);
 
     }
 
     private void send(String command) {
-        bluetooth.send(command,true);
+        bluetooth.send(command, true);
     }
 
     public void setBluetooth(BluetoothSPP bluetooth) {
