@@ -10,6 +10,7 @@ import com.bluebot.ui.ResponseHandler;
 import com.bluebot.ui.UIRequestTypes;
 import com.bluebot.ui.UIResponseType;
 
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,6 +30,7 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Created by Clifton Craig on 4/8/17.
  */
+@Ignore
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class BlueBotIDESpec implements RequestProcessor {
