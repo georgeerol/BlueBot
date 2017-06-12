@@ -18,6 +18,9 @@ android:
     - extra-google-m2repository
     - extra-android-m2repository
     - addon-google_apis-google-25
+    - android-sdk-preview-license-.+
+    - android-sdk-license-.+
+    - google-gdk-license-.+
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
