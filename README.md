@@ -7,3 +7,5 @@ A **Blue**tooth Android app that controls an Arduino based Ro**bot**.
 2. [**DC Motor Construction**](https://github.com/fouliex/AndroidRcCar/wiki/RC-DC-Motor-Construction)
 
 You can get the Arduino Smart Robot Car Kit from [**Amazon**](https://www.amazon.com/gp/product/B01DPH0SWY/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
+
+[![Build Status](https://travis-ci.org/fouliex/BlueBot.svg?branch=master)](https://travis-ci.org/fouliex/BlueBot)
