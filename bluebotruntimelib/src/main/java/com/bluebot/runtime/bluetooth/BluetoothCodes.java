@@ -16,7 +16,7 @@ public class BluetoothCodes {
     public static final String RIGHTBACK = "R";
 
     // Servo Control
-    public static final String LOORIGHT = "1";
+    public static final String LOOKRIGHT = "1";
     public static final String LOOKLEFT= "2";
     public static final String LOOKSTRAIGHT = "3";
 }
