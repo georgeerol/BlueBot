@@ -11,9 +11,6 @@ android:
     #- build-tools-19.1.0
 
     # The SDK version used to compile your project
-    - android-16
-    - android-21
-    - android-22
     - android-25
 
     # Additional components
@@ -23,8 +20,6 @@ licenses:
     - google-gdk-license-.+
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
-    - sys-img-armeabi-v7a-android-16
-    - sys-img-armeabi-v7a-android-21
     - sys-img-armeabi-v7a-android-22
     - sys-img-armeabi-v7a-android-25
 jdk: oraclejdk8
