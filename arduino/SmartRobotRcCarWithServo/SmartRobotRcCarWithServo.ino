@@ -1,4 +1,6 @@
-
+/**
+ * Created by George Fouche
+ */
 #include <Servo.h>
 //create servo object to control servo
 Servo myservo;
@@ -24,8 +26,23 @@ void setup()
 
 }
 
+void lookRight(){
+  servo(40);
+}
+
+void lookLeft(){
+  servo(140);
+}
+
+
+void lookStraight(){
+  servo(90);
+}
+
+void servo(int angle){
+  myservo.write(angle);
+}
 void forward(){
-  myservo.write(90);
   digitalWrite(IN1,HIGH);
   digitalWrite(IN3,HIGH);
   digitalWrite(IN2,LOW);
@@ -34,14 +51,12 @@ void forward(){
 }
 
 void leftForward(){
-  myservo.write(140);
   digitalWrite(IN3,LOW);
   digitalWrite(IN2,LOW);
   digitalWrite(IN4,LOW);
   digitalWrite(IN1,HIGH);
 }
 void rightForward(){
-  myservo.write(40);
   digitalWrite(IN1,LOW);
   digitalWrite(IN2,LOW);
   digitalWrite(IN4,LOW);
@@ -86,6 +101,9 @@ void loop()
     else if (command =='r') rightForward();
     else if (command == 'L') leftBackward();
     else if (command == 'R')rightBackward();
+    else if (command == '1')lookRight();
+    else if (command == '2') lookLeft();
+    else if (command == '3') lookStraight();
     else if (command == 's') stop();
   }
 }
