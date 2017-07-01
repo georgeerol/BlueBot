@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private boolean lookStraight = false;
 
 
-    private BluetoothSPP bluetooth;
+    private BluetoothControl bluetooth;
     private Button connect;
 
     @Override
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     }
 
     private void setBluetoothListener() {
-        bluetooth.setBluetoothConnectionListener(new BluetoothSPP.BluetoothConnectionListener() {
+        bluetooth.setBluetoothConnectionListener(new BluetoothControllerConnectionListener() {
             @Override
             public void onDeviceConnected(String name, String address) {
                 connect.setEnabled(true);
@@ -216,12 +216,10 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         bluetooth.send(command, true);
     }
 
-    public void setBluetooth(BluetoothSPP bluetooth) {
+    public void setBluetooth(BluetoothControl bluetooth) {
         this.bluetooth = bluetooth;
         if (!bluetooth.isBluetoothAvailable()) {
             Toast.makeText(getApplicationContext(), "Bluetooth is not available", Toast.LENGTH_SHORT).show();
-            //close the Activity
-            finish();
         }
         setBluetoothListener();
     }

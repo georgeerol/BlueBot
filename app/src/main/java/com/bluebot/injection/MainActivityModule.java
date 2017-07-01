@@ -2,7 +2,9 @@ package com.bluebot.injection;
 
 import android.content.Context;
 
+import com.bluebot.BluetoothControl;
 import com.bluebot.MainActivity;
+import com.bluebot.wrappers.BluetoothControlWrapper;
 
 import app.akexorcist.bluetotohspp.library.BluetoothSPP;
 
@@ -19,13 +21,15 @@ class MainActivityModule implements InjectionModule{
     }
 
     private void injectActivity(MainActivity mainActivity) {
-        mainActivity.setBluetooth(lazyGetBluetoothSPP());
+        mainActivity.setBluetooth(lazyGetBluetoothControl());
     }
 
-    private BluetoothSPP lazyGetBluetoothSPP() {
-        if(sharedComponents.doesNotHave(BluetoothSPP.class))
-            sharedComponents.put(BluetoothSPP.class, new BluetoothSPP(sharedComponents.get(Context.class)));
-        return sharedComponents.get(BluetoothSPP.class);
+    private BluetoothControl lazyGetBluetoothControl() {
+        if(sharedComponents.doesNotHave(BluetoothSPP.class)) {
+            final BluetoothSPP bluetoothSPP = new BluetoothSPP(sharedComponents.get(Context.class));
+            sharedComponents.put(BluetoothControl.class, new BluetoothControlWrapper(bluetoothSPP));
+        }
+        return sharedComponents.get(BluetoothControl.class);
     }
 
     @Override
