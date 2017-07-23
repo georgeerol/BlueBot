@@ -10,6 +10,6 @@ You can get the Arduino Smart Robot Car Kit from [**Amazon**](https://www.amazon
 
 
 ## Class Diagram
-# ![BlueBot Class Diagram](https://github.com/fouliex/BlueBot/blob/master/resources/diagrams/BluebotClassDiagram.png) Android BlueBot
+# ![BlueBot Class Diagram](https://github.com/fouliex/BlueBot/blob/master/resources/diagrams/BluebotClassDiagram.png)
 
 
