@@ -25,7 +25,8 @@ before_script:
 addons:
   sonarcloud:
     organization: "bluebotsonar" # the key of the org you chose at step #3
-    token: $SONAR_TOKEN # encrypted value of your token
+    token:
+     secure: "41b7348ac42a469b9ab6168cbd4f3a4b029d4751" # encrypted value of your token
 script:
   # other script steps might be done before running the actual analysis
   - sonar-scanner
