@@ -9,4 +9,5 @@ A **Blue**tooth Android app that controls an Arduino based Ro**bot**.
 You can get the Arduino Smart Robot Car Kit from [**Amazon**](https://www.amazon.com/gp/product/B01DPH0SWY/ref=oh_aui_detailpage_o00_s00?ie=UTF8&psc=1)
 
 [![Build Status](https://travis-ci.org/fouliex/BlueBot.svg?branch=master)](https://travis-ci.org/fouliex/BlueBot)
+[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=bluebotkey)](https://sonarcloud.io/dashboard?id=bluebotkey)
  
