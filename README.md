@@ -12,6 +12,5 @@ You can get the Arduino Smart Robot Car Kit from [**Amazon**](https://www.amazon
 [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=bluebotkey)](https://sonarcloud.io/dashboard?id=bluebotkey)
  
 
-## Video ##
-[image_0]: ./video/bluebot.mp4
+[image_0]: ./resources/images/bluebot.gif
 ![alt text][image_0] 
