@@ -11,3 +11,7 @@ You can get the Arduino Smart Robot Car Kit from [**Amazon**](https://www.amazon
 [![Build Status](https://travis-ci.org/fouliex/BlueBot.svg?branch=master)](https://travis-ci.org/fouliex/BlueBot)
 [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=bluebotkey)](https://sonarcloud.io/dashboard?id=bluebotkey)
  
+
+## Video ##
+[image_0]: ./video/bluebot.mp4
+![alt text][image_0] 
